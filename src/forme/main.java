@@ -15,6 +15,8 @@ public class main {
 		
 		CitireCerc c1 = new CitireCerc();
 		c1.citire();
+		
+		
 	}
 
 }
