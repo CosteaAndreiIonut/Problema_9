@@ -4,7 +4,7 @@ import java.util.*;
 import org.json.simple.*;
 import org.json.simple.parser.*;
 
-public class CitirePatrulater {
+public class patrulaterJSON {
 	public void citire(){
 	JSONParser parser = new JSONParser();
  
@@ -31,5 +31,38 @@ public class CitirePatrulater {
        }
 
     }
+	
+	static public void scriere(forme.patrulater p4){
+		JSONObject patrulater = new JSONObject();
+		
+		JSONArray Coord = new JSONArray();
+		Coord.add("x1: " + p4.getX1());
+		Coord.add("y2: " + p4.getY1());
+		Coord.add("x2: "+ p4.getX2());
+		Coord.add("y2: "+ p4.getY2());
+		Coord.add("y3: "+ p4.getY3());
+		
+		patrulater.put("patrulater", Coord);
+		
+		File file = new File("json_patrulater.json");
+		try {
+			file.createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		try {
+			FileWriter fileWriter = new FileWriter(file);
+			fileWriter.write(patrulater.toJSONString());
+			fileWriter.flush();
+			fileWriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 
 }

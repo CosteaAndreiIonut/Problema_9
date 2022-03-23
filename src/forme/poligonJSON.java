@@ -4,7 +4,7 @@ import java.util.*;
 import org.json.simple.*;
 import org.json.simple.parser.*;
 
-public class CitirePoligon {
+public class poligonJSON {
 	public void citire(){
 	JSONParser parser = new JSONParser();
  
@@ -31,5 +31,37 @@ public class CitirePoligon {
        }
 
     }
+	
+	static public void scriere(forme.poligon poli){
+		JSONObject poligon = new JSONObject();
+		
+		JSONArray Coord = new JSONArray();
+		Coord.add("x: " + poli.getX());
+		Coord.add("y: " + poli.getY());
+		Coord.add("n: "+ poli.getN());
+
+		
+		poligon.put("poligon", Coord);
+		
+		File file = new File("json_poligon.json");
+		try {
+			file.createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		try {
+			FileWriter fileWriter = new FileWriter(file);
+			fileWriter.write(poligon.toJSONString());
+			fileWriter.flush();
+			fileWriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 
 }

@@ -50,5 +50,29 @@ public class triunghi extends forma{
         t1.trasare(g2d);
         g2d.rotate(radiani);
     }
+    
+	public int getX1() {
+		return x1;
+	}
+	
+	public int getY1() {
+		return y1;
+	}
+	
+	public int getX2() {
+		return x2;
+	}
+	
+	public int getY2() {
+		return y2;
+	}
+	
+	public int getX3() {
+		return x3;
+	}
+	
+	public int getY3() {
+		return y3;
+	}
 
 }

@@ -46,5 +46,20 @@ public class cerc extends forma{
         c1.trasare(g2d);
         g2d.rotate(radiani);
     }
+    
+    public int getX() {
+    	return x;
+    }
+    
+    public int getY() {
+    	return y;
+    }
+    
+    public int getRaza() {
+    	return raza;
+    }
 	
+    public int getDiametru() {
+    	return diametru;
+    }
 }

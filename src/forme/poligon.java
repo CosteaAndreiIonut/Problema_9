@@ -46,5 +46,17 @@ public class poligon extends forma{
         poli1.trasare(g2d);
         g2d.rotate(radiani);
     }
+    
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+	
+	public int getN() {
+		return n;
+	}
 
 }

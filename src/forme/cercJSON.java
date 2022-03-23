@@ -4,7 +4,7 @@ import java.util.*;
 import org.json.simple.*;
 import org.json.simple.parser.*;
 
-public class CitireCerc {
+public class cercJSON {
 	public void citire(){
 	JSONParser parser = new JSONParser();
  
@@ -31,5 +31,37 @@ public class CitireCerc {
        }
 
     }
+	
+	static public void scriere(forme.cerc c){
+		JSONObject cerc = new JSONObject();
+		
+		JSONArray Coord = new JSONArray();
+		Coord.add("x: " + c.getX());
+		Coord.add("y: " +c.getY());
+		Coord.add("raza: "+c.getRaza());
+		Coord.add("diametru: "+c.getDiametru());
+		
+		cerc.put("cerc", Coord);
+		
+		File file = new File("json_cerc.json");
+		try {
+			file.createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		try {
+			FileWriter fileWriter = new FileWriter(file);
+			fileWriter.write(cerc.toJSONString());
+			fileWriter.flush();
+			fileWriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 
 }
