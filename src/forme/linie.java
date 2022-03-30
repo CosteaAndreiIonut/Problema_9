@@ -4,63 +4,54 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 
-public class linie extends forma {
+public class linie extends punct {
 	  
 	private int x1,y1,x2,y2;
+	private punct p1 = new punct(x1,y1);
+	private punct p2 = new punct(x2,y2);
 	
-	public linie(int x1, int y1, int x2, int y2) {
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
+	public linie(punct p1,punct p2) {
+		this.p1.x = p1.x;
+		this.p1.y = p1.y;
+		this.p2.x = p2.x;
+		this.p2.y = p2.y;
 	}
 	
     public void trasare(Graphics g)
     {
-        g.drawLine(x1, y1, x2, y2);
+        g.drawLine(p1.x, p1.y, p2.x, p2.y);
     }
     
-    
-    public void drag(){
     	
-    }
-    
-    
-    public void drop() {
-    	
-    }
-    
-    
-    public void resize(Graphics g,int x1, int y1, int x2, int y2) {
-    	this.x1 = x1;
-    	this.x2 = x2;
-    	this.y1 = y1;
-    	this.y2 = y2;
-    }
-
-
-	public void rotate(Graphics g) {
-    	linie l1 = null;
-    	float radiani = 0;
-    	Graphics2D g2d = (Graphics2D) g;
-    	AffineTransform oldTransform = g2d.getTransform();
-        l1.trasare(g2d);
-        g2d.rotate(radiani);
-    }
-	
 	public int getX1() {
-		return x1;
+		return p1.x;
 	}
 	
 	public int getY1() {
-		return y1;
+		return p1.y;
 	}
 	
 	public int getX2() {
-		return x2;
+		return p2.x;
 	}
 	
 	public int getY2() {
-		return y2;
+		return p2.y;
+	}
+
+	public void setX1(int x) {
+		this.p1.x = x1;
+	}
+	
+	public void setY1(int y) {
+		this.p1.y = y1;
+	}
+	
+	public void setX2(int x) {
+		this.p2.x = x2;
+	}
+	
+	public void setY2(int y) {
+		this.p2.y = y2;
 	}
 }

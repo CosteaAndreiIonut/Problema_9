@@ -4,71 +4,91 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 
-public class patrulater extends forma{
+public class patrulater extends punct {
+	  
+	private int x1,y1,x2,y2,x3,y3,x4,y4;
+	punct p1 = new punct(x1,y1);
+	punct p2 = new punct(x2,y2);
+	punct p3 = new punct(x3,y3);
+	punct p4 = new punct(x4,y4);
 	
-	private int x1,y1,x2,y2,y3;
-	
-	public patrulater(int x1,int y1, int x2, int y2, int y3) {
-		this.x1 = x1;
-		this.x2 = x2;
-		this.y1 = y1;
-		this.y2 = y2;
-		this.y3 = y3;
-
+	public patrulater(punct p1,punct p2,punct p3,punct p4) {
+		this.p1.x = p1.x;
+		this.p1.y = p1.y;
+		this.p2.x = p2.x;
+		this.p2.y = p2.y;
+		this.p3.x = p3.x;
+		this.p3.y = p3.y;
+		this.p4.x = p4.x;
+		this.p4.y = p4.y;
 	}
 	
-	public void trasare(Graphics g) {	
+    public void trasare(Graphics g) {
+
+		g.drawPolygon(new int[] {p1.x, p2.x, p3.x, p4.x}, new int[] {p1.y, p2.y, p3.y, p4.y}, 4);
 		
-        g.drawLine(x1 ,y1, x2, y2);		//x1,y1,x2,y2 30, 100, 400, 100
-        g.drawLine(x2 ,y2, x2, y3);		//x2,y2,x2,y3 400, 100, 400, 200
-        g.drawLine(x2 ,y3, x1, y3);		//x2,y3,x1,y3 400, 200, 30, 200
-        g.drawLine(x1 ,y3, x1, y1);		//x1,y3,x1,y1 30, 200, 30, 100
-	}
-
-    public void drag(Graphics g){
+    }
     	
-    }
-    
-    
-    public void drop(Graphics g) {
-    	
-    }
-    
-    
-    public void resize(int x1,int y1, int x2, int y2,int y3) {
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
-		this.y3 = y3;
-    }
-    
-    public void rotate(Graphics g) {
-    	patrulater plat1 = null;
-    	float radiani = 0;
-    	Graphics2D g2d = (Graphics2D) g;
-    	AffineTransform oldTransform = g2d.getTransform();
-        plat1.trasare(g2d);
-        g2d.rotate(radiani);
-    }
-    
 	public int getX1() {
-		return x1;
+		return p1.x;
 	}
 	
 	public int getY1() {
-		return y1;
+		return p1.y;
 	}
 	
 	public int getX2() {
-		return x2;
+		return p2.x;
 	}
 	
 	public int getY2() {
-		return y2;
+		return p2.y;
+	}
+
+	public int getX3() {
+		return p3.x;
 	}
 	
 	public int getY3() {
-		return y3;
+		return p3.y;
 	}
+	public int getX4() {
+		return p4.x;
+	}
+	
+	public int getY4() {
+		return p4.y;
+	}
+
+    public void setX1(int x) {
+	this.p1.x = x1;
+	
+    }
+    public void setY1(int y) {
+	this.p1.y = y1;
+    }
+    
+    public void setX2(int x) {
+    this.p2.x = x2;
+    }
+    
+    public void setY2(int y) {
+    this.p2.y = y2;
+    }
+    
+    public void setX3(int x) {
+    this.p3.x = x3;
+    }
+    
+    public void setY3(int y) {
+    this.p3.y = y3;
+    }
+    
+    public void setX4(int x) {
+    this.p4.x = x4;
+    }
+    
+    public void setY4(int y) {
+    this.p4.y = y4;
+    }
 }

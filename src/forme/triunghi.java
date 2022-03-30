@@ -4,75 +4,74 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 
-public class triunghi extends forma{
-	
+public class triunghi extends punct {
+	  
 	private int x1,y1,x2,y2,x3,y3;
+	punct p1 = new punct(x1,y1);
+	punct p2 = new punct(x2,y2);
+	punct p3 = new punct(x3,y3);
 	
-	public triunghi(int x1, int x2, int x3, int y1, int y2, int y3) {
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
-		this.x3 = x3;
-		this.y3 = y3;
+	public triunghi(punct p1,punct p2,punct p3) {
+		this.p1.x = p1.x;
+		this.p1.y = p1.y;
+		this.p2.x = p2.x;
+		this.p2.y = p2.y;
+		this.p3.x = p3.x;
+		this.p3.y = p3.y;
 	}
 	
-	public void trasare(Graphics g) {
-		g.drawLine(x1, y1, x2, y2);
-		g.drawLine(x2, y2, x3, y3);
-		g.drawLine(x3, y3, x1, y1);
-	}
-	
-    public void drag(Graphics g){
+    public void trasare(Graphics g)
+    {	
     	
+		g.drawPolygon(new int[] {p1.x, p2.x, p3.x}, new int[] {p1.y, p2.y, p3.y}, 3);
+		
     }
-    
-    
-    public void drop(Graphics g) {
-    	
-    }
-    
-    
-    public void resize(Graphics g, int x1, int x2, int x3, int y1, int y2, int y3) {
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
-		this.x3 = x3;
-		this.y3 = y3;
-    }
-    
-    public void rotate(Graphics g) {
-    	triunghi t1 = null;
-    	float radiani = 0;
-    	Graphics2D g2d = (Graphics2D) g;
-    	AffineTransform oldTransform = g2d.getTransform();
-        t1.trasare(g2d);
-        g2d.rotate(radiani);
-    }
-    
+   
 	public int getX1() {
-		return x1;
+		return p1.x;
 	}
 	
 	public int getY1() {
-		return y1;
+		return p1.y;
 	}
 	
 	public int getX2() {
-		return x2;
+		return p2.x;
 	}
 	
 	public int getY2() {
-		return y2;
+		return p2.y;
 	}
-	
+
 	public int getX3() {
-		return x3;
+		return p3.x;
 	}
 	
 	public int getY3() {
-		return y3;
+		return p3.y;
 	}
 
+    public void setX1(int x) {
+	this.x = x1;
+    }
+    
+    public void setY1(int y) {
+	this.x = y1;
+    }
+    
+    public void setX2(int x) {
+	this.x = x2;
+    }
+    
+    public void setY2(int x) {
+	this.x = y2;
+    }
+    
+    public void setX3(int x) {
+	this.x = x3;
+    }
+    
+    public void setY3(int x) {
+	this.x = y3;
+    }
 }
