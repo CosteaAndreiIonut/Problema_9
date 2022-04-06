@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 
-public class triunghi extends punct {
+public class triunghi implements forma_ob {
 	  
 	private int x1,y1,x2,y2,x3,y3;
 	punct p1 = new punct(x1,y1);
@@ -52,26 +52,26 @@ public class triunghi extends punct {
 	}
 
     public void setX1(int x) {
-	this.x = x1;
+	this.p1.x = x1;
     }
     
     public void setY1(int y) {
-	this.x = y1;
+	this.p1.y = y1;
     }
     
     public void setX2(int x) {
-	this.x = x2;
+	this.p2.x = x2;
     }
     
     public void setY2(int x) {
-	this.x = y2;
+	this.p2.y = y2;
     }
     
     public void setX3(int x) {
-	this.x = x3;
+	this.p3.x = x3;
     }
     
     public void setY3(int x) {
-	this.x = y3;
+	this.p3.y = y3;
     }
 }

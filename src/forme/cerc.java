@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 
-public class cerc extends punct{
+public class cerc implements forma_ob{
 
 	private int x1,y1;
 	private punct p = new punct(x1, y1);

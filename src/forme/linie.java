@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 
-public class linie extends punct {
+public class linie implements forma_ob {
 	  
 	private int x1,y1,x2,y2;
 	private punct p1 = new punct(x1,y1);
@@ -21,8 +21,7 @@ public class linie extends punct {
     {
         g.drawLine(p1.x, p1.y, p2.x, p2.y);
     }
-    
-    	
+       	
 	public int getX1() {
 		return p1.x;
 	}

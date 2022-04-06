@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 
-public class patrulater extends punct {
+public class patrulater implements forma_ob {
 	  
 	private int x1,y1,x2,y2,x3,y3,x4,y4;
 	punct p1 = new punct(x1,y1);

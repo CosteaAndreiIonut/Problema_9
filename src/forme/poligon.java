@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 
-public class poligon extends punct{
+public class poligon implements forma_ob{
 	
 	private int x[], y[], n;
 	
@@ -44,4 +44,5 @@ public class poligon extends punct{
     public void setX2(int n) {
 	this.n = n;
     }
+
 }
